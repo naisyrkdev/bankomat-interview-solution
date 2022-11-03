@@ -11,7 +11,7 @@ after succesfully created migration run:
 
 Now you can successfully build and run solution.
 
-The user is mocked, there is authentication nor authorization. 
+The user is mocked, there is no authentication nor authorization. 
 
 If you want acces /bank-account/withdraw-money use BankomatId: 1 and BankAccount: 1.
 
