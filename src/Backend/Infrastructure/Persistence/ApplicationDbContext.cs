@@ -82,7 +82,6 @@ namespace Infrastructure.Persistence
                   BanknotValue = 10
               }
          );
-
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 

@@ -19,7 +19,7 @@ export default {
   },
   mounted(){
     console.log("here")
-    axios.get('https://localhost:7274/users/' + 1)
+    axios.get("https://localhost:7274/users/" + 1)
     .then(function (response) {
                     console.log("printing data from put CANDIDATE", response.data);
                 }).finally();
