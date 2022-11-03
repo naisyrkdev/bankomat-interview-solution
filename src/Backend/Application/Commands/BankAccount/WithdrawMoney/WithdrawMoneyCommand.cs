@@ -28,7 +28,6 @@ namespace Application.Commands.BankAccounts.WithdrawMoney
         {
             var bankAccount = _context.BankAccounts.Where(b => b.BankAccountId == request.BankomatId).FirstOrDefault();
             var bankomat = _context.Bankomats.Where(b => b.BankomatId == request.BankomatId).FirstOrDefault();
-
             var banknots = _context.Banknots.Where(b => b.BankomatId == request.BankomatId).ToList();
 
             var amountOf200banknots = banknots.Where(b => b.BanknotValue == 200).FirstOrDefault();
@@ -115,7 +114,6 @@ namespace Application.Commands.BankAccounts.WithdrawMoney
                 _logger.LogError(ex.Message, ex);
                 return new BadRequestObjectResult("An error has occured.");
             }
-
 
             return new OkObjectResult(output);
         }
