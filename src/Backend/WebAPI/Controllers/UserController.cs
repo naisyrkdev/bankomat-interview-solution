@@ -1,6 +1,4 @@
-﻿using Application.Commands.BankAccounts.WithdrawMoney;
-using Application.Queries.BankAccount;
-using Application.Queries.Users;
+﻿using Application.Queries.Users;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
