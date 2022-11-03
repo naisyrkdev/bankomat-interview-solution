@@ -31,72 +31,72 @@ namespace Application.Commands.BankAccounts.WithdrawMoney
 
             var banknots = _context.Banknots.Where(b => b.BankomatId == request.BankomatId).ToList();
 
-            var amountOf200bucks = banknots.Where(b => b.BanknotValue == 200).FirstOrDefault();
-            var amountOf100bucks = banknots.Where(b => b.BanknotValue == 100).FirstOrDefault();
-            var amountOf50bucks = banknots.Where(b => b.BanknotValue == 50).FirstOrDefault();
-            var amountOf20bucks = banknots.Where(b => b.BanknotValue == 20).FirstOrDefault();
-            var amountOf10bucks = banknots.Where(b => b.BanknotValue == 10).FirstOrDefault();
+            var amountOf200banknots = banknots.Where(b => b.BanknotValue == 200).FirstOrDefault();
+            var amountOf100banknots = banknots.Where(b => b.BanknotValue == 100).FirstOrDefault();
+            var amountOf50banknots = banknots.Where(b => b.BanknotValue == 50).FirstOrDefault();
+            var amountOf20banknots = banknots.Where(b => b.BanknotValue == 20).FirstOrDefault();
+            var amountOf10banknots = banknots.Where(b => b.BanknotValue == 10).FirstOrDefault();
 
             var moneyLeftToWithdraw = request.AmountOfMoney;
 
             var output = new List<int>();
 
-            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 &&   amountOf200bucks.Amount >= 1)
+            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 && amountOf200banknots.Amount >= 1)
             {
                 if(moneyLeftToWithdraw < 200)
                 {
                     break;
                 }
                 bankAccount.Balance -= 200;
-                amountOf200bucks.Amount--;
+                amountOf200banknots.Amount--;
                 output.Add(200);
                 moneyLeftToWithdraw -= 200;
             }
 
-            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 &&    amountOf100bucks.Amount >= 1)
+            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 && amountOf100banknots.Amount >= 1)
             {
                 if (moneyLeftToWithdraw < 100)
                 {
                     break;
                 }
                 bankAccount.Balance -= 100;
-                amountOf100bucks.Amount--;
+                amountOf100banknots.Amount--;
                 output.Add(100);
                 moneyLeftToWithdraw -= 100;
             }
 
-            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 &&   amountOf50bucks.Amount >= 1)
+            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 && amountOf50banknots.Amount >= 1)
             {
                 if (moneyLeftToWithdraw < 50)
                 {
                     break;
                 }
                 bankAccount.Balance -= 50;
-                amountOf50bucks.Amount--;
+                amountOf50banknots.Amount--;
                 output.Add(50);
                 moneyLeftToWithdraw -= 50;
             }
 
-            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 &&    amountOf20bucks.Amount >= 1)
+            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 && amountOf20banknots.Amount >= 1)
             {
                 if (moneyLeftToWithdraw < 20)
                 {
                     break;
                 }
                 bankAccount.Balance -= 20;
-                amountOf20bucks.Amount--;
+                amountOf20banknots.Amount--;
                 output.Add(20);
                 moneyLeftToWithdraw -= 20;
             }
 
-            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 &&    amountOf10bucks.Amount >= 1)
+            while (bankAccount.Balance > moneyLeftToWithdraw && moneyLeftToWithdraw > 0 && amountOf10banknots.Amount >= 1)
             {
                 if (moneyLeftToWithdraw < 10)
                 {
                     break;
                 }
                 bankAccount.Balance -= 10;
-                amountOf10bucks.Amount--;
+                amountOf10banknots.Amount--;
                 output.Add(10);
                 moneyLeftToWithdraw -= 10;
             }
